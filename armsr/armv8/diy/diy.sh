@@ -4,7 +4,17 @@
 git clone https://github.com/daeuniverse/openwrt-packages --single-branch --depth=1 clone/daepkg
 git clone https://github.com/ophub/luci-app-amlogic --single-branch --depth=1 clone/amlogic
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall --depth=1 clone/passwall
-git clone https://github.com/Zerogiven-OpenWRT-Packages/luci-app-podman --single-branch --depth=1 feeds/luci/applications/luci-app-podman
+# ===== Nikki (mihomo) =====
+git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki package/nikki
+
+# ===== OpenList =====
+git clone --depth=1 https://github.com/OpenListTeam/OpenList-OpenWrt package/openlist
+
+# ===== Docker（可选，和现有 podman 二选一）=====
+git clone --depth=1 https://github.com/lisaac/luci-app-dockerman /tmp/dockerman
+cp -rf /tmp/dockerman/applications/luci-app-dockerman feeds/luci/applications/
+git clone --depth=1 https://github.com/lisaac/luci-lib-docker /tmp/luci-lib-docker
+cp -rf /tmp/luci-lib-docker/collections/luci-lib-docker feeds/luci/libs/
 
 # Adjust packages
 rm -rf feeds/luci/applications/luci-app-daed feeds/luci/applications/luci-app-passwall feeds/packages/net/dae
